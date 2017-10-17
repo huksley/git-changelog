@@ -58,6 +58,7 @@ doctype-system="about:legacy-compat"
       }
     </style>
     <script><![CDATA[
+$(document).ready(function () {
       $("#filter-internal").click(function () {
         $(".tag-internal").each(function (idx, el) { 
           $(el).css("display", "none");
@@ -93,6 +94,7 @@ doctype-system="about:legacy-compat"
           $(el).css("display", "none");
         });
       })
+});
       ]]>
     </script>
    </head>
