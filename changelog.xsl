@@ -94,6 +94,12 @@ $(document).ready(function () {
           $(el).css("display", "none");
         });
       })
+
+       $("#filter-only-ui-feature").click(function () {
+        $(".tags").not(".tag-ui").not(".tag-feature").each(function (idx, el) { 
+          $(el).css("display", "none");
+        });
+      })
 });
       ]]>
     </script>
@@ -114,6 +120,8 @@ $(document).ready(function () {
      <button id="filter-author" class="btn btn-xs btn-default">Hide author</button>
      <xsl:text> </xsl:text>
      <button id="filter-merge" class="btn btn-xs btn-default">Hide merge</button>
+     <xsl:text> </xsl:text>
+     <button id="filter-only-ui-feature" class="btn btn-xs btn-default">Only ui &amp; feature</button>
       </div>
     </xsl:if>
     <table class="changelog_entries">
@@ -185,6 +193,7 @@ $(document).ready(function () {
 <xsl:variable name="ttags" select="translate(translate(normalize-space($tags), ' ', ','), ';', ',')"/>
 <tr>
     <xsl:attribute name="class">
+      <xsl:text>tags </xsl:text>
       <xsl:choose>
       <xsl:when test="$ttags = ''">no-tags</xsl:when>
       <xsl:otherwise>
