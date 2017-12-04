@@ -1,5 +1,6 @@
-#!/bin/sh
-revlist=$(git rev-list HEAD)
+#!/bin/bash
+arg=${1:-HEAD}
+revlist=$(git rev-list $arg)
 (
   echo '<?xml version="1.0"?>'
   echo '<?xml-stylesheet type="text/xsl" href="changelog.xsl"?>'
